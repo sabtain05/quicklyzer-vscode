@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "quicklyzer.helloWorld",
-        "title": "Hello World"
+        "command": "quicklyzer.analyzeProject",
+        "title": "Quicklyzer: Analyze project"
       }
     ]
   },
