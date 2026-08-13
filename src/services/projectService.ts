@@ -8,5 +8,7 @@ export class ProjectService {
         if(!workspaceFolders) {
             return undefined;
         }
+
+        return workspaceFolders[0].uri.fsPath;
     }
 }
