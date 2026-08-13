@@ -6,6 +6,7 @@ export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "quicklyzer" is now active!');
 
 	const projectService = new ProjectService();
+	const analysisService = new AnalysisService();
 
 	const disposable = vscode.commands.registerCommand('quicklyzer.analyzeProject', () => {
 		const projectPath = projectService.getWorkspacePath();
