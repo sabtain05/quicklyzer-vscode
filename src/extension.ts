@@ -6,7 +6,9 @@ export function activate(context: vscode.ExtensionContext) {
 	const disposable = vscode.commands.registerCommand('quicklyzer.analyzeProject', () => {
 		const workspaceFolders = vscode.workspace.workspaceFolders;
 
-		
+		if(!workspaceFolders) {
+			
+		}
 		
 		vscode.window.showInformationMessage('Quicklyzer: Analyze Project');
 	});
