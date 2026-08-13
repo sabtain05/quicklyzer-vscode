@@ -3,9 +3,9 @@ import * as vscode from 'vscode';
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "quicklyzer" is now active!');
 
-	const disposable = vscode.commands.registerCommand('quicklyzer.helloWorld', () => {
+	const disposable = vscode.commands.registerCommand('quicklyzer.analyzeProject', () => {
 		
-		vscode.window.showInformationMessage('Hello World from Quicklyzer!');
+		vscode.window.showInformationMessage('Quicklyzer: Analyze Project');
 	});
 
 	context.subscriptions.push(disposable);
