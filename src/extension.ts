@@ -18,7 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		const result = await analysisService.analyze(projectPath);
 		
-		vscode.window.showInformationMessage(`Quicklyzer: Project detected at ${projectPath}`);
+		vscode.window.showInformationMessage(result.message);
 	});
 
 	context.subscriptions.push(disposable);
