@@ -4,6 +4,8 @@ import { ProjectService } from './services/projectService';
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "quicklyzer" is now active!');
 
+	const projectService = new ProjectService();
+
 	const disposable = vscode.commands.registerCommand('quicklyzer.analyzeProject', () => {
 		const workspaceFolders = vscode.workspace.workspaceFolders;
 
