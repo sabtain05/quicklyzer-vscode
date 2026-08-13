@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { ProjectService } from './services/projectService';
+import { AnalysisService } from './services/analysisService';
 
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "quicklyzer" is now active!');
