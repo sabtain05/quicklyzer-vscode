@@ -8,7 +8,7 @@ export function activate(context: vscode.ExtensionContext) {
 	const projectService = new ProjectService();
 	const analysisService = new AnalysisService();
 
-	let disposable = vscode.commands.registerCommand('quicklyzer.analyzeProject', () => {
+	let disposable = vscode.commands.registerCommand('quicklyzer.analyzeProject', async () => {
 		const projectPath = projectService.getWorkspacePath();
 
 		if(!projectPath) {
