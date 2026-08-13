@@ -4,5 +4,7 @@ export interface AnalysisResult {
 }
 
 export class AnalysisService {
-    
+    async analyze(projectPath: string): Promise<AnalysisResult> {
+        
+    }
 }
