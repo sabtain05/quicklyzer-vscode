@@ -13,7 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		const projectPath = workspaceFolders[0].uri.fsPath;
 		
-		vscode.window.showInformationMessage('Quicklyzer: Analyze Project');
+		vscode.window.showInformationMessage(`Quicklyzer: Project detected at ${projectPath}`);
 	});
 
 	context.subscriptions.push(disposable);
