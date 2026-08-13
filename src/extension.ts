@@ -15,6 +15,8 @@ export function activate(context: vscode.ExtensionContext) {
 			vscode.window.showWarningMessage('Quicklyzer: Please open a project folder first.');
 			return;
 		}
+
+		const result = await analysisService.analyze(projectPath);
 		
 		vscode.window.showInformationMessage(`Quicklyzer: Project detected at ${projectPath}`);
 	});
