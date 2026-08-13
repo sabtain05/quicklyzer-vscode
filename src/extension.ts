@@ -9,12 +9,10 @@ export function activate(context: vscode.ExtensionContext) {
 	const disposable = vscode.commands.registerCommand('quicklyzer.analyzeProject', () => {
 		const projectPath = projectService.getWorkspacePath();
 
-		if(!project) {
+		if(!projectPath) {
 			vscode.window.showWarningMessage('Quicklyzer: Please open a project folder first.');
 			return;
 		}
-
-		const projectPath = workspaceFolders[0].uri.fsPath;
 		
 		vscode.window.showInformationMessage(`Quicklyzer: Project detected at ${projectPath}`);
 	});
