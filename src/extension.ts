@@ -7,7 +7,7 @@ export function activate(context: vscode.ExtensionContext) {
 		const workspaceFolders = vscode.workspace.workspaceFolders;
 
 		if(!workspaceFolders) {
-			
+			vscode.window.showWarningMessage('Quicklyzer: Please open a project folder first.')
 		}
 		
 		vscode.window.showInformationMessage('Quicklyzer: Analyze Project');
