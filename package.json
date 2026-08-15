@@ -50,6 +50,6 @@
     "serialize-javascript": "^7.0.6"
   },
   "dependencies": {
-    "quicklyzer": "^1.0.0"
+    "quicklyzer": "file:../../quicklyzer"
   }
 }
