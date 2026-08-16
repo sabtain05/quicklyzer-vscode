@@ -16,10 +16,9 @@ export function activate(context: vscode.ExtensionContext) {
 			return;
 		}
 
-		const result = await analysisService.analyze(projectPath);
-		
-		vscode.window.showInformationMessage(`Analysis complete: ${result.name}`);
-	});
+		try {
+			
+		}
 
 	context.subscriptions.push(disposable);
 }
