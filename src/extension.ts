@@ -18,9 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		const result = await analysisService.analyze(projectPath);
 		
-		// ProjectInfo may not have a 'message' property; show a sensible default
-		const info = (result as any)?.message ?? 'Analysis complete';
-		vscode.window.showInformationMessage(info);
+		vscode.window.showInformationMessage(`Analysis complete: ${result.name}`);
 	});
 
 	context.subscriptions.push(disposable);
