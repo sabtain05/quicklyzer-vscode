@@ -22,8 +22,9 @@ export function activate(context: vscode.ExtensionContext) {
 		} catch (error) {
 			const message = error instanceof Error ? error.message : 'Unknown analysis error';
 			vscode.window.showErrorMessage (`Quicklyzer analysis failed: ${message}`);
+
 		}
-		}
+		});
 
 	context.subscriptions.push(disposable);
 }
