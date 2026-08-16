@@ -19,6 +19,9 @@ export function activate(context: vscode.ExtensionContext) {
 		try {
 			const result = await analysisService.analyze(projectPath);
 			vscode.window.showInformationMessage(`Quicklyzer: ${result.name} — Score ${result.projectScore.score}/100`);
+		} catch (error) {
+			
+		}
 		}
 
 	context.subscriptions.push(disposable);
