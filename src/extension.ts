@@ -17,7 +17,7 @@ export function activate(context: vscode.ExtensionContext) {
 		}
 
 		try {
-			
+			const result = await analysisService.analyze(projectPath);
 		}
 
 	context.subscriptions.push(disposable);
