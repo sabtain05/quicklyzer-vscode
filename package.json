@@ -22,7 +22,8 @@
       "explorer": [
         {
           "id": "quicklyzer.analysisView",
-          "name": "Quicklyzer"
+          "name": "Quicklyzer",
+          "icon": "$(pulse)"
         }
       ]
     }
