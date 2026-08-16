@@ -1,6 +1,7 @@
+import { analyzeProject } from "quicklyzer/dist/services/project.js";
+
 export class AnalysisService {
     async analyze(projectPath: string) {
-        const { analyzeProject } = await import("quicklyzer/dist/services/project.js");
         return analyzeProject(projectPath);
     }
 }
