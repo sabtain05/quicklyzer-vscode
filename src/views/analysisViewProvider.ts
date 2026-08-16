@@ -6,5 +6,8 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
         webviewView.webview.options = {
             enableScripts: false
         };
+
+        webviewView.webview.html =
+        
     }
 }
