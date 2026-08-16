@@ -8,6 +8,10 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
         };
 
         webviewView.webview.html =
-        
+        `<!DOCTYPE html>
+         <html>
+         <body>
+            <h2>Quicklyzer</h2>
+            <p>Ready to analyze your project.</p>
     }
 }
