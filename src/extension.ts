@@ -10,6 +10,8 @@ export function activate(context: vscode.ExtensionContext) {
 	const analysisService = new AnalysisService();
 	const analysisViewProvider = new AnalysisViewProvider();
 
+	context.subscriptions.push(vscode.window.registerWebviewViewProvider('quicklyzer.analysisView', analysisViewProvider));
+
 	let disposable = vscode.commands.registerCommand('quicklyzer.analyzeProject', async () => {
 		const projectPath = projectService.getWorkspacePath();
 
