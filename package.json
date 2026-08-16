@@ -20,7 +20,11 @@
     ]
   },
   "views" : {
-    
+    "explorer": [
+      {
+        
+      }
+    ]
   }
   "scripts": {
     "vscode:prepublish": "npm run package",
