@@ -21,6 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
 			vscode.window.showInformationMessage(`Quicklyzer: ${result.name} — Score ${result.projectScore.score}/100`);
 		} catch (error) {
 			const message = error instanceof Error ? error.message : 'Unknown analysis error';
+			vscode.window.showErrorMessage (`Quicklyzer analysis failed: ${message}`);
 		}
 		}
 
