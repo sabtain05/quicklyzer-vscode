@@ -17,15 +17,15 @@
         "command": "quicklyzer.analyzeProject",
         "title": "Quicklyzer: Analyze project"
       }
-    ]
-  },
-  "views" : {
-    "explorer": [
-      {
-        "id": "quicklyzer.analysisView",
-        "name": "Quicklyzer"
-      }
-    ]
+    ],
+    "views" : {
+      "explorer": [
+        {
+          "id": "quicklyzer.analysisView",
+          "name": "Quicklyzer"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
