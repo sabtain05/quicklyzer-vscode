@@ -22,7 +22,8 @@
   "views" : {
     "explorer": [
       {
-        
+        "id": "quicklyzer.analysisView",
+        "name": "Quicklyzer"
       }
     ]
   }
