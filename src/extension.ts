@@ -1,12 +1,12 @@
 import * as vscode from 'vscode';
-import { ProjectService } from './services/projectService';
 import { AnalysisViewProvider } from './views/analysisViewProvider';
 import { analyzeWorkspace } from './services/quicklyzerEngine';
 
 export function activate(context: vscode.ExtensionContext) {
-	console.log('Congratulations, your extension "quicklyzer" is now active!');
+	console.log(
+		'Congratulations, your extension "quicklyzer" is now active!'
+	);
 
-	const projectService = new ProjectService();
 	const analysisViewProvider = new AnalysisViewProvider();
 
 	context.subscriptions.push(
@@ -16,43 +16,41 @@ export function activate(context: vscode.ExtensionContext) {
 		)
 	);
 
-	const disposable = vscode.commands.registerCommand(
+	const analyzeCommand = vscode.commands.registerCommand(
 		'quicklyzer.analyzeProject',
 		async () => {
-			const projectPath = projectService.getWorkspacePath();
+			const workspaceFolder =
+				vscode.workspace.workspaceFolders?.[0];
 
-			if (!projectPath) {
-				vscode.window.showWarningMessage(
-					'Quicklyzer: Please open a project folder first.'
+			if (!workspaceFolder) {
+				vscode.window.showErrorMessage(
+					'Quicklyzer: No workspace is open.'
 				);
 				return;
 			}
 
 			try {
-				const result = await analyzeWorkspace(projectPath);
+				const result = await analyzeWorkspace(
+					workspaceFolder.uri.fsPath
+				);
 
 				console.log('Quicklyzer analysis successful:');
 				console.log(result);
 
 				vscode.window.showInformationMessage(
-					`Quicklyzer: ${result.name} — Score ${result.projectScore.score}/100`
+					`Quicklyzer: Analysis complete — ${result.name}`
 				);
 			} catch (error) {
-				const message =
-					error instanceof Error
-						? error.message
-						: 'Unknown analysis error';
-
 				console.error('Quicklyzer analysis failed:', error);
 
 				vscode.window.showErrorMessage(
-					`Quicklyzer analysis failed: ${message}`
+					'Quicklyzer: Analysis failed.'
 				);
 			}
 		}
 	);
 
-	context.subscriptions.push(disposable);
+	context.subscriptions.push(analyzeCommand);
 }
 
 export function deactivate() {}
