@@ -1,0 +1,1 @@
+import { analyzeProject } from "../../../quicklyzer/dist/services/project.js";
