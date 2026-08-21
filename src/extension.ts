@@ -29,7 +29,7 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			try {
-				const result = analyzeWorkspace(projectPath);
+				const result = await analyzeWorkspace(projectPath);
 
 				console.log('Quicklyzer analysis successful:');
 				console.log(result);
