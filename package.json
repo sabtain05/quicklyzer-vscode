@@ -21,6 +21,7 @@
     "views" : {
       "explorer": [
         {
+          "type": "webview",
           "id": "quicklyzer.analysisView",
           "name": "Quicklyzer",
           "icon": "$(pulse)"
