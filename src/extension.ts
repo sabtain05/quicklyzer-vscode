@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import { ProjectService } from './services/projectService';
 import { AnalysisService } from './services/analysisService';
 import { AnalysisViewProvider } from './views/analysisViewProvider';
+import { analyzeWorkspace } from './services/quicklyzerEngine';
 
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "quicklyzer" is now active!');
