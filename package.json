@@ -15,7 +15,7 @@
     "commands": [
       {
         "command": "quicklyzer.analyzeProject",
-        "title": "Quicklyzer: Analyze project"
+        "title": "Quicklyzer: Analyze Project"
       }
     ],
     "views" : {
