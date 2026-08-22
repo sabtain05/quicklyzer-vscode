@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-import { AnalysisViewProvider } from './views/analysisViewProvider';
-import { analyzeWorkspace } from './services/quicklyzerEngine';
+import { AnalysisViewProvider } from './views/analysisViewProvider.js';
+import { analyzeWorkspace } from './services/quicklyzerEngine.js';
 
 export function activate(context: vscode.ExtensionContext) {
 	console.log(
@@ -18,7 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const analyzeCommand = vscode.commands.registerCommand(
 		'quicklyzer.analyzeProject',
-		async () => {
+		() => {
 			const workspaceFolder =
 				vscode.workspace.workspaceFolders?.[0];
 
@@ -30,20 +30,25 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			try {
-				const result = await analyzeWorkspace(
+				const result = analyzeWorkspace(
 					workspaceFolder.uri.fsPath
 				);
 
 				analysisViewProvider.showAnalysis(result);
 
-				console.log('Quicklyzer analysis successful:');
-				console.log(result);
+				console.log(
+					'Quicklyzer analysis successful:',
+					result
+				);
 
 				vscode.window.showInformationMessage(
 					`Quicklyzer: Analysis complete — ${result.name}`
 				);
 			} catch (error) {
-				console.error('Quicklyzer analysis failed:', error);
+				console.error(
+					'Quicklyzer analysis failed:',
+					error
+				);
 
 				vscode.window.showErrorMessage(
 					'Quicklyzer: Analysis failed.'
