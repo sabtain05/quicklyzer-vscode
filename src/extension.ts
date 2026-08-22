@@ -34,6 +34,8 @@ export function activate(context: vscode.ExtensionContext) {
 					workspaceFolder.uri.fsPath
 				);
 
+				analysisViewProvider.showAnalysis(result);
+
 				console.log('Quicklyzer analysis successful:');
 				console.log(result);
 
