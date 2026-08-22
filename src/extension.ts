@@ -18,7 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const analyzeCommand = vscode.commands.registerCommand(
 		'quicklyzer.analyzeProject',
-		() => {
+		async () => {
 			const workspaceFolder =
 				vscode.workspace.workspaceFolders?.[0];
 
@@ -30,25 +30,20 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			try {
-				const result = analyzeWorkspace(
+				const result = await analyzeWorkspace(
 					workspaceFolder.uri.fsPath
 				);
 
 				analysisViewProvider.showAnalysis(result);
 
-				console.log(
-					'Quicklyzer analysis successful:',
-					result
-				);
+				console.log('Quicklyzer analysis successful:');
+				console.log(result);
 
 				vscode.window.showInformationMessage(
 					`Quicklyzer: Analysis complete — ${result.name}`
 				);
 			} catch (error) {
-				console.error(
-					'Quicklyzer analysis failed:',
-					error
-				);
+				console.error('Quicklyzer analysis failed:', error);
 
 				vscode.window.showErrorMessage(
 					'Quicklyzer: Analysis failed.'
