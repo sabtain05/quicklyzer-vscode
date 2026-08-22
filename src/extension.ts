@@ -7,10 +7,6 @@ export function activate(context: vscode.ExtensionContext) {
 		'Congratulations, your extension "quicklyzer" is now active!'
 	);
 
-	// ------------------------------------------------------------
-	// Quicklyzer Webview
-	// ------------------------------------------------------------
-
 	const analysisViewProvider = new AnalysisViewProvider();
 
 	context.subscriptions.push(
@@ -19,10 +15,6 @@ export function activate(context: vscode.ExtensionContext) {
 			analysisViewProvider
 		)
 	);
-
-	// ------------------------------------------------------------
-	// Analyze Project Command
-	// ------------------------------------------------------------
 
 	const analyzeCommand = vscode.commands.registerCommand(
 		'quicklyzer.analyzeProject',
@@ -42,7 +34,6 @@ export function activate(context: vscode.ExtensionContext) {
 					workspaceFolder.uri.fsPath
 				);
 
-				// Send analysis results to the Quicklyzer Webview
 				analysisViewProvider.showAnalysis(result);
 
 				console.log(
