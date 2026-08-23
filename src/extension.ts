@@ -65,7 +65,17 @@ export function activate(context: vscode.ExtensionContext) {
     }
 );
 
-	context.subscriptions.push(analyzeCommand);
+	context.subscriptions.push(
+    vscode.window.registerWebviewViewProvider(
+        "quicklyzer.analysisView",
+        analysisViewProvider,
+        {
+            webviewOptions: {
+                retainContextWhenHidden: true
+            }
+        }
+    )
+);
 }
 
 export function deactivate() {}
