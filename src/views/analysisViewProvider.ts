@@ -53,4 +53,32 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
         
         ${this.getStyles()}`;
     }
+
+    private getWelcomeHtml(): string {
+        return `
+        <!DOCTYPE html>
+        <html>
+        <body>
+            <div class="container">
+                <div class="hero">
+                    <div class="logo">Q</div>
+                    <h1>Quicklyzer</h1>
+                    <p>Intelligent software project analysis.</p>
+                </div>
+
+                <button class="primary" onclick="analyze()">
+                    Analyze Project
+                </button>
+
+                <p class="hint">
+                    Analyze the currently opened workspace.
+                </p>
+            </div>
+
+            ${this.getStyles()}
+            ${this.getScript()}
+        </body>
+        </html>
+        `;
+    }
 }
