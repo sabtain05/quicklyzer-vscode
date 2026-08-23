@@ -1017,5 +1017,32 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
                     background:
                         var(--vscode-button-secondaryHoverBackground);
                 }
+
+                .primary {
+                    width: 100%;
+                    background: var(--vscode-button-background);
+                    color: var(--vscode-button-foreground);
+                    border: none;
+                    margin-top: 20px;
+                }
+
+                .hero {
+                    text-align: center;
+                    padding: 30px 10px 10px;
+                }
+
+                .logo {
+                    width: 52px;
+                    height: 52px;
+                    margin: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 12px;
+                    background: var(--vscode-button-background);
+                    color: var(--vscode-button-foreground);
+                    font-size: 27px;
+                    font-weight: 800;
+                }
     }
 }
