@@ -964,5 +964,21 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
                     max-width: 1100px;
                     margin: auto;
                 }
+                
+                .header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    margin-bottom: 20px;
+                }
+
+                .brand {
+                    font-size: 11px;
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                    opacity: .65;
+                }
+
+                
     }
 }
