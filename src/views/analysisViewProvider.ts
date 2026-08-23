@@ -7,4 +7,11 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
         this.view = webviewView;
         webviewView.webview.options = { enableScripts: true };
         
+        webviewView.webview.html = this.getWelcomeHtml();
+        webviewView.webview.onDidReceiveMessage(async (message) => {
+            if(message.command === "analyze") {
+                await vscode.commands.executeCommand("quicklyzer.analyzeProject");
+            }
+        });
+    }
 }
