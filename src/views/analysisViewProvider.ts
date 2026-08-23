@@ -1073,5 +1073,29 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
                     font-size: 16px;
                     opacity: .5;
                 }
+
+                .rating {
+                    font-size: 13px;
+                    opacity: .75;
+                }
+
+                .project-meta {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 12px 25px;
+                    min-width: 230px;
+                }
+
+                .project-meta span {
+                    display: block;
+                    font-size: 10px;
+                    opacity: .6;
+                }
+
+                .project-meta strong {
+                    display: block;
+                    margin-top: 3px;
+                    font-size: 12px;
+                }
     }
 }
