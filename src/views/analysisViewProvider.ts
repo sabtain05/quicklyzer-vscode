@@ -22,4 +22,11 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
 
         this.view.webview.html = this.getLoadingHtml();
     }
+
+    public showAnalysis(result: any): void {
+        if(!this.view) {
+            return;
+        }
+        this.view.webview.html = this.getDashboardHtml(result);
+    }
 }
