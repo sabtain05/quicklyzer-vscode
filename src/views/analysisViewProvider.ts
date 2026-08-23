@@ -81,4 +81,25 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
         </html>
         `;
     }
+
+    private getLoadingHtml(): string {
+        return `
+        <!DOCTYPE html>
+            <html>
+            <body>
+                <div class="container loading">
+                    <div class="spinner"></div>
+                    <h2>Analyzing project...</h2>
+                    <p>Quicklyzer is analyzing your workspace.</p>
+                    <p class="hint">
+                        Architecture, dependencies, testing, security,
+                        Git, documentation and more.
+                    </p>
+                </div>
+
+                ${this.getStyles()}
+            </body>
+            </html>
+        `;
+    }
 }
