@@ -915,5 +915,9 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
         if(typeof value !== "number") {
             return String(value ?? "N/A");
         }
+
+        if (value < 1024) {
+            return `${value} B`;
+        }
     }
 }
