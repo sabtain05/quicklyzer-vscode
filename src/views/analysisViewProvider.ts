@@ -1159,5 +1159,16 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
                     margin-top: 8px;
                     padding: 0 3px;
                 }
+
+                ul {
+                    margin: 5px 0;
+                    padding-left: 18px;
+                }
+
+                li {
+                    margin: 5px 0;
+                    font-size: 12px;
+                    line-height: 1.4;
+                }
     }
 }
