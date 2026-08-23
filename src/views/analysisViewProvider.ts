@@ -1239,4 +1239,26 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
             </style>
         `;
     }
+
+     private getScript(): string {
+        return `
+            <script>
+
+                const vscode = acquireVsCodeApi();
+
+                function analyze() {
+                    vscode.postMessage({
+                        command: "analyze"
+                    });
+                }
+
+                function refresh() {
+                    vscode.postMessage({
+                        command: "refresh"
+                    });
+                }
+
+            </script>
+        `;
+    }
 }
