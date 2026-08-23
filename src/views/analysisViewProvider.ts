@@ -930,4 +930,8 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
         
         return `${(value / (1024*1024*1024)).toFixed(1)} GB`;
     }
+
+    private escapeHtml(value: any): string {
+        return value
+    }
 }
