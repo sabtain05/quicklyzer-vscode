@@ -5,6 +5,6 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
     private view?: vscode.WebviewView;
     resolveWebviewView(webviewView: vscode.WebviewView): void{
         this.view = webviewView;
-    }
+        webviewView.webview.options = { enableScripts: true };
         
 }
