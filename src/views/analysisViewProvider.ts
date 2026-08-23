@@ -1044,5 +1044,34 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
                     font-size: 27px;
                     font-weight: 800;
                 }
+
+                .hero-card {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 20px;
+                    padding: 20px;
+                    border: 1px solid var(--vscode-panel-border);
+                    border-radius: 8px;
+                    background: var(--vscode-editorWidget-background);
+                }
+
+                .label {
+                    display: block;
+                    font-size: 10px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    opacity: .6;
+                }
+
+                .big-score {
+                    font-size: 42px;
+                    font-weight: 800;
+                    margin-top: 4px;
+                }
+
+                .big-score span {
+                    font-size: 16px;
+                    opacity: .5;
+                }
     }
 }
