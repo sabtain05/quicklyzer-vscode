@@ -1170,5 +1170,20 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
                     font-size: 12px;
                     line-height: 1.4;
                 }
+
+                .summary,
+                .verdict {
+                    padding: 14px;
+                    border-left: 3px solid
+                        var(--vscode-textLink-foreground);
+                    background:
+                        var(--vscode-editorWidget-background);
+                    border-radius: 4px;
+                    line-height: 1.5;
+                }
+
+                .verdict {
+                    margin-top: 15px;
+                }
     }
 }
