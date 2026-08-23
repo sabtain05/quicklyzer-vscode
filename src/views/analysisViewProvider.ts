@@ -894,6 +894,12 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
         }
 
         return `
-        `
+        <div class="subsection">
+            <h3>${this.escapeHtml(title)}</h3>
+            <ul>${items.map(item=>`
+                <li>${this.escapeHtml(String(item))}</li>`).join("")}
+            </ul>
+        </div>
+        `;
     }
 }
