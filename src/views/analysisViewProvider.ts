@@ -947,6 +947,22 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
                     box-sizing: border-box;
                 }
 
-                
+                body {
+                    padding: 0;
+                    margin: 0;
+                    color: var(--vscode-foreground);
+                    background: var(--vscode-sideBar-background);
+                    font-family:
+                        var(--vscode-font-family),
+                        sans-serif;
+                    font-size:
+                        var(--vscode-font-size);
+                }
+
+                .container {
+                    padding: 16px;
+                    max-width: 1100px;
+                    margin: auto;
+                }
     }
 }
