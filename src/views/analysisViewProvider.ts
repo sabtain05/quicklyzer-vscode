@@ -102,4 +102,9 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
             </html>
         `;
     }
+
+    private getDashboardHtml(project: any): string {
+        const score = project.projectScore?.score??0;
+        const rating = project.projectScore?.rating?? "Unknown";
+    }
 }
