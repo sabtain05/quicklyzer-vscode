@@ -937,7 +937,7 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
 
     private getStyles(): string {
         return `
-         <style>
+            <style>
 
                 :root {
                     color-scheme: light dark;
@@ -1202,5 +1202,41 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
                     border-radius: 50%;
                     animation: spin .8s linear infinite;
                 }
+
+                 @keyframes spin {
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+
+                .error {
+                    padding: 15px;
+                    margin: 20px 0;
+                    border-left: 3px solid
+                        var(--vscode-errorForeground);
+                    background:
+                        var(--vscode-editorWidget-background);
+                }
+
+                footer {
+                    margin-top: 35px;
+                    padding: 20px 0;
+                    text-align: center;
+                    font-size: 10px;
+                    opacity: .45;
+                }
+
+                @media (max-width: 500px) {
+                    .hero-card {
+                        flex-direction: column;
+                    }
+
+                    .project-meta {
+                        min-width: 0;
+                    }
+                }
+
+            </style>
+        `;
     }
 }
