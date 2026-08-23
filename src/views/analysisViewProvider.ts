@@ -999,6 +999,23 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
                     opacity: .65;
                 }
 
-                
+                .hint {
+                    font-size: 12px;
+                    text-align: center;
+                }
+
+                button {
+                    border: 1px solid var(--vscode-button-border);
+                    background: var(--vscode-button-secondaryBackground);
+                    color: var(--vscode-button-secondaryForeground);
+                    padding: 7px 12px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+
+                button:hover {
+                    background:
+                        var(--vscode-button-secondaryHoverBackground);
+                }
     }
 }
