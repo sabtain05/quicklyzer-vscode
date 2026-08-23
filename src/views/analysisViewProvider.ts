@@ -892,5 +892,8 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
             </div>
             `;
         }
+
+        return `
+        `
     }
 }
