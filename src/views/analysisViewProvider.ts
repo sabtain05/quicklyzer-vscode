@@ -14,4 +14,12 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
             }
         });
     }
+
+    public showLoading(): void {
+        if(!this.view) {
+            return;
+        }
+
+        this.view.webview.html = this.getLoadingHtml();
+    }
 }
