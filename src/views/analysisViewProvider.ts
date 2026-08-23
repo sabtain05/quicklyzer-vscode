@@ -934,4 +934,19 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
     private escapeHtml(value: any): string {
         return value.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");
     }
+
+    private getStyles(): string {
+        return `
+         <style>
+
+                :root {
+                    color-scheme: light dark;
+                }
+
+                * {
+                    box-sizing: border-box;
+                }
+
+                
+    }
 }
