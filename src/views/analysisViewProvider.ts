@@ -904,6 +904,10 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
     }
 
     private formatNumber(value: any): string {
-        
+        if(typeof value !== "number") {
+            return String(value ?? "N/A");
+        }
+
+        return value.toLocaleString();
     }
 }
