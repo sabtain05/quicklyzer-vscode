@@ -862,4 +862,24 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
         </div>
         `;
     }
+
+    private stat (label: string, value: any): string {
+        return `
+        <div class="card stat">
+                <span class="label">
+                    ${this.escapeHtml(label)}
+                </span>
+
+                <strong>
+                    ${this.escapeHtml(
+                        value === undefined ||
+                        value === null ||
+                        value === ""
+                            ? "N/A"
+                            : String(value)
+                    )}
+                </strong>
+            </div>
+        `;
+    }
 }
