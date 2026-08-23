@@ -882,4 +882,15 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
             </div>
         `;
     }
+
+    private listSection(title: string, items: any): string {
+        if(!Array.isArray(items) || items.length===0) {
+            return `
+            <div class="subsection">
+                <h3>${this.escapeHtml(title)}</h3>
+                <p class="muted">None detected.</p>
+            </div>
+            `;
+        }
+    }
 }
