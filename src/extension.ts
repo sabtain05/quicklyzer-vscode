@@ -34,7 +34,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         try {
 
-            const result = analyzeWorkspace(
+            const result = await analyzeWorkspace(
                 workspaceFolder.uri.fsPath
             );
 
