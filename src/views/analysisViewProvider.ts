@@ -1185,5 +1185,22 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
                 .verdict {
                     margin-top: 15px;
                 }
+
+                .loading {
+                    text-align: center;
+                    padding-top: 70px;
+                }
+
+                .spinner {
+                    width: 30px;
+                    height: 30px;
+                    margin: auto;
+                    border: 3px solid
+                        var(--vscode-panel-border);
+                    border-top-color:
+                        var(--vscode-textLink-foreground);
+                    border-radius: 50%;
+                    animation: spin .8s linear infinite;
+                }
     }
 }
