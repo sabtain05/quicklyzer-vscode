@@ -837,6 +837,6 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
 
     private scoreCard(name: string, scoreData: any): string {
         const score = typeof scoreData === "object"? scoreData?.score ?? 0: scoreData??0;
-        const rating = type
+        const rating = typeof scoreData === "object"? scoreData?.rating ?? "":"";
     }
 }
