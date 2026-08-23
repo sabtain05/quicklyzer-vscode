@@ -1115,5 +1115,32 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
                 .score-card {
                     padding: 12px;
                 }
+
+                .score {
+                    display: block;
+                    font-size: 23px;
+                    margin: 5px 0 2px;
+                }
+
+                .score span {
+                    font-size: 11px;
+                    opacity: .5;
+                }
+
+                .progress {
+                    height: 3px;
+                    margin-top: 9px;
+                    background:
+                        var(--vscode-progressBar-background);
+                    opacity: .3;
+                    border-radius: 5px;
+                    overflow: hidden;
+                }
+
+                .progress div {
+                    height: 100%;
+                    background:
+                        var(--vscode-progressBar-background);
+                }
     }
 }
