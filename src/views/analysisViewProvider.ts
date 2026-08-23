@@ -1142,5 +1142,22 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
                     background:
                         var(--vscode-progressBar-background);
                 }
+
+                .stat {
+                    padding: 11px;
+                    min-height: 60px;
+                }
+
+                .stat strong {
+                    display: block;
+                    margin-top: 5px;
+                    font-size: 13px;
+                    overflow-wrap: anywhere;
+                }
+
+                .subsection {
+                    margin-top: 8px;
+                    padding: 0 3px;
+                }
     }
 }
