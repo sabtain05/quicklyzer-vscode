@@ -1097,5 +1097,23 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
                     margin-top: 3px;
                     font-size: 12px;
                 }
+
+                .grid {
+                    display: grid;
+                    grid-template-columns:
+                        repeat(auto-fit, minmax(135px, 1fr));
+                    gap: 8px;
+                }
+
+                .card {
+                    border: 1px solid var(--vscode-panel-border);
+                    border-radius: 6px;
+                    background:
+                        var(--vscode-editorWidget-background);
+                }
+
+                .score-card {
+                    padding: 12px;
+                }
     }
 }
