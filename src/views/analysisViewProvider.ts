@@ -902,4 +902,8 @@ export class AnalysisViewProvider implements vscode.WebviewViewProvider {
         </div>
         `;
     }
+
+    private formatNumber(value: any): string {
+        
+    }
 }
