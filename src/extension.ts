@@ -17,45 +17,53 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 
 	const analyzeCommand = vscode.commands.registerCommand(
-		'quicklyzer.analyzeProject',
-		async () => {
-			const workspaceFolder =
-				vscode.workspace.workspaceFolders?.[0];
+    "quicklyzer.analyzeProject",
+    async () => {
 
-			if (!workspaceFolder) {
-				vscode.window.showErrorMessage(
-					'Quicklyzer: No workspace is open.'
-				);
-				return;
-			}
+        const workspaceFolder =
+            vscode.workspace.workspaceFolders?.[0];
 
-			try {
-				const result = await analyzeWorkspace(
-					workspaceFolder.uri.fsPath
-				);
+        if (!workspaceFolder) {
+            vscode.window.showErrorMessage(
+                "Quicklyzer: No workspace is open."
+            );
+            return;
+        }
 
-				analysisViewProvider.showAnalysis(result);
+        analysisViewProvider.showLoading();
 
-				console.log(
-					'Quicklyzer analysis successful:',
-					result
-				);
+        try {
 
-				vscode.window.showInformationMessage(
-					`Quicklyzer: Analysis complete — ${result.name}`
-				);
-			} catch (error) {
-				console.error(
-					'Quicklyzer analysis failed:',
-					error
-				);
+            const result = analyzeWorkspace(
+                workspaceFolder.uri.fsPath
+            );
 
-				vscode.window.showErrorMessage(
-					'Quicklyzer: Analysis failed.'
-				);
-			}
-		}
-	);
+            analysisViewProvider.showAnalysis(result);
+
+            vscode.window.showInformationMessage(
+                `Quicklyzer: Analysis complete — ${result.name}`
+            );
+
+        } catch (error) {
+
+            const message =
+                error instanceof Error
+                    ? error.message
+                    : "Unknown error.";
+
+            console.error(
+                "Quicklyzer analysis failed:",
+                error
+            );
+
+            analysisViewProvider.showError(message);
+
+            vscode.window.showErrorMessage(
+                `Quicklyzer: ${message}`
+            );
+        }
+    }
+);
 
 	context.subscriptions.push(analyzeCommand);
 }
