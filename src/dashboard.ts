@@ -465,6 +465,37 @@ ${items
 </div>
 
 </div>
+
+`;
+}
+
+function analysisSection(
+    title: string,
+    items: [string, string | number | boolean][]
+): string {
+
+    return `
+<div class="section">
+
+<h2>${escapeHtml(title)}</h2>
+
+<div class="grid">
+
+${items.map(([label, value]) => `
+<div class="card">
+
+<h3>${escapeHtml(label)}</h3>
+
+<div class="score">
+${escapeHtml(String(value))}
+</div>
+
+</div>
+`).join("")}
+
+</div>
+
+</div>
 `;
 }
 
