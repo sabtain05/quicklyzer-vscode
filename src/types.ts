@@ -50,4 +50,13 @@ export interface QuicklyzerAnalysis {
             rating: string;
         };
     };
+
+    security: {
+        score: {
+            score: number;
+            rating: string;
+        };
+        secrets: string[];
+        sensitiveFiles: string[];
+    };
 }
