@@ -30,7 +30,7 @@ export function activate(context: vscode.ExtensionContext) {
                 const project = await analyzeWorkspace(
                     workspace.uri.fsPath
                 );
-                showDashboard(context, project);
+                showDashboard(project);
 
                 output.clear();
 

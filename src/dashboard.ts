@@ -1,7 +1,6 @@
 import * as vscode from "vscode";
 
 export function showDashboard(
-    context: vscode.ExtensionContext,
     project: any
 ) {
     const panel = vscode.window.createWebviewPanel(
