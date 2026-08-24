@@ -295,6 +295,130 @@ ${escapeHtml(project.intelligence.verdict)}
 
 </div>
 
+${analysisSection("Architecture", [
+    ["Modules", project.architecture.totalModules],
+    ["Imports", project.architecture.totalImports],
+    ["Dependency Depth", project.architecture.dependencyDepth],
+    ["Public Modules", project.architecture.publicModules],
+    ["Dead Modules", project.architecture.deadModules],
+    ["Circular Dependencies", project.architecture.circularDependencies],
+    ["Layers", project.architecture.layers.length]
+])}
+
+${analysisSection("Performance", [
+    ["Heavy Files", project.performance.totalHeavyFiles],
+    ["Largest Modules", project.performance.largestModules.length],
+    ["Startup Cost", project.performance.startupCost],
+    ["Heavy Dependencies", project.performance.heavyDependencies],
+    ["Import Density", project.performance.importDensity],
+    ["Optimized Modules", project.performance.optimizationSummary.optimized],
+    ["Needs Attention", project.performance.optimizationSummary.needsAttention]
+])}
+
+${analysisSection("Testing", [
+    ["Framework", project.testing.framework],
+    ["Test Files", project.testing.testFiles.length],
+    ["Unit Tests", project.testing.unitTests],
+    ["Integration Tests", project.testing.integrationTests],
+    ["E2E Tests", project.testing.e2eTests],
+    ["Snapshots", project.testing.snapshots],
+    ["Mocks", project.testing.mocks],
+    ["Untested Files", project.testing.untestedFiles],
+    ["Test Ratio", project.testing.testRatio],
+    ["Coverage", project.testing.coverage ? "Yes" : "No"],
+    ["Maturity", project.testing.maturity.level]
+])}
+
+${analysisSection("API", [
+    ["Endpoints", project.api.totalEndpoints],
+    ["GraphQL", project.api.graphql ? "Yes" : "No"],
+    ["WebSocket", project.api.websocket ? "Yes" : "No"],
+    ["Swagger / OpenAPI", project.api.swagger ? "Yes" : "No"],
+    ["Middleware", project.api.middleware],
+    ["Version", project.api.version],
+    ["Complexity", project.api.complexity],
+    ["Maturity", project.api.maturity]
+])}
+
+${analysisSection("Build", [
+    ["Build System", project.build.system],
+    ["Output Folders", project.build.outputFolders.length],
+    ["Assets", project.build.assets],
+    ["Source Maps", project.build.sourceMaps],
+    ["Minified Files", project.build.minifiedFiles],
+    ["Bundles", project.build.bundles],
+    ["Tree Shaking", project.build.treeShaking ? "Yes" : "No"],
+    ["Code Splitting", project.build.codeSplitting ? "Yes" : "No"],
+    ["Production Ready", project.build.productionReady ? "Yes" : "No"],
+    ["Maturity", project.build.maturity]
+])}
+
+${analysisSection("Security", [
+    ["Environment Files", project.security.envFiles.length],
+    ["Dangerous Files", project.security.dangerousFiles.length],
+    ["Possible Secrets", project.security.secrets.length],
+    ["Sensitive Files", project.security.sensitiveFiles.length]
+])}
+
+${analysisSection("Documentation", [
+    ["README", project.documentation.readme ? "Yes" : "No"],
+    ["CHANGELOG", project.documentation.changelog ? "Yes" : "No"],
+    ["CONTRIBUTING", project.documentation.contributing ? "Yes" : "No"],
+    ["Code of Conduct", project.documentation.codeOfConduct ? "Yes" : "No"],
+    ["Security Policy", project.documentation.security ? "Yes" : "No"],
+    ["License", project.documentation.license ? "Yes" : "No"],
+    ["README Sections", project.documentation.readmeSections.length],
+    ["README Words", project.documentation.readmeStats.words],
+    ["README Headings", project.documentation.readmeStats.headings],
+    ["Code Blocks", project.documentation.readmeStats.codeBlocks],
+    ["Links", project.documentation.readmeStats.links]
+])}
+
+${analysisSection("Dependencies", [
+    ["Production Packages", project.dependencyAnalysis.production],
+    ["Development Packages", project.dependencyAnalysis.development],
+    ["Total Packages", project.dependencyAnalysis.total],
+    ["Installed Packages", project.dependencyAnalysis.installed],
+    ["Installed Size", project.dependencyAnalysis.installedSize],
+    ["Unused", project.dependencyAnalysis.unused.length],
+    ["Missing", project.dependencyAnalysis.missing.length],
+    ["Duplicate Versions", project.dependencyAnalysis.duplicateVersions.length]
+])}
+
+${analysisSection("Project Statistics", [
+    ["Total Files", project.totalFiles],
+    ["Source Files", project.sourceFiles],
+    ["Directories", project.directories],
+    ["Lines of Code", project.linesOfCode.toLocaleString()],
+    ["Empty Directories", project.emptyDirectories],
+    ["Hidden Files", project.hiddenFiles],
+    ["Project Size", project.projectSize]
+])}
+
+${analysisSection("Environment", [
+    ["Language", project.language],
+    ["Framework", project.framework],
+    ["Framework Version", project.frameworkVersion],
+    ["Build Tool", project.buildTool],
+    ["Build Tool Version", project.buildToolVersion],
+    ["Node.js Required", project.nodeVersion],
+    ["Docker", project.docker ? "Yes" : "No"],
+    ["CI/CD", project.ci],
+    ["ESLint", project.eslint ? "Yes" : "No"],
+    ["Prettier", project.prettier ? "Yes" : "No"],
+    ["Monorepo", project.monorepo ? "Yes" : "No"]
+])}
+
+${analysisSection("Repository", [
+    ["Git", project.git ? "Yes" : "No"],
+    ["Branch", project.gitBranch],
+    ["README", project.readme ? "Yes" : "No"],
+    ["License", project.license ? "Yes" : "No"],
+    ["Remote", project.gitAnalysis.remote || "None"],
+    ["Last Commit", project.gitAnalysis.lastCommit || "None"],
+    ["Working Tree", project.gitAnalysis.status]
+])}
+
 </body>
 </html>
 `;
