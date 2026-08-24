@@ -32,6 +32,7 @@ export interface QuicklyzerAnalysis {
             score: number;
             rating: string;
         };
-        
-    }
+        framework: string;
+        testFiles: string[];
+    };
 }
