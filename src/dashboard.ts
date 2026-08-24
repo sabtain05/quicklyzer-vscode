@@ -1,8 +1,6 @@
 import * as vscode from "vscode";
 
-export function showDashboard(
-    project: any
-) {
+export function showDashboard(project: any) {
     const panel = vscode.window.createWebviewPanel(
         "quicklyzerDashboard",
         "Quicklyzer",
