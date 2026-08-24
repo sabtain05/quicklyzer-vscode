@@ -18,4 +18,12 @@ export interface QuicklyzerAnalysis {
         totalImports: number;
         circularDependencies: number;
     };
+
+    performance: {
+        score: {
+            score: number;
+            rating: string;
+        };
+        totalHeavyFiles: number;
+    };
 }
