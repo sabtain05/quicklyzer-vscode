@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import { analyzeWorkspace } from "./analyzer";
+import { showDashboard } from "./dashboard";
 
 export function activate(context: vscode.ExtensionContext) {
     console.log('Quicklyzer extension is now active.');
