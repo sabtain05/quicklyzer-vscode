@@ -57,16 +57,16 @@ export function activate(context: vscode.ExtensionContext) {
                 output.appendLine("ARCHITECTURE");
                 output.appendLine("------------------------------");
                 output.appendLine(
-                    `Modules                 : ${project.architecture.totalModules}`
+                    `Modules   : ${project.architecture.totalModules}`
                 );
                 output.appendLine(
-                    `Imports                 : ${project.architecture.totalImports}`
+                    `Imports   : ${project.architecture.totalImports}`
                 );
                 output.appendLine(
                     `Circular Dependencies   : ${project.architecture.circularDependencies}`
                 );
                 output.appendLine(
-                    `Score                   : ${project.architecture.score.score}/100`
+                    `Score     : ${project.architecture.score.score}/100`
                 );
                 output.appendLine("");
 
