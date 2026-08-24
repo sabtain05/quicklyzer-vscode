@@ -14,6 +14,8 @@ export interface QuicklyzerAnalysis {
             score: number;
             rating: string;
         };
-        
-    }
+        totalModules: number;
+        totalImports: number;
+        circularDependencies: number;
+    };
 }
