@@ -26,4 +26,12 @@ export interface QuicklyzerAnalysis {
         };
         totalHeavyFiles: number;
     };
+
+    testing: {
+        score: {
+            score: number;
+            rating: string;
+        };
+        
+    }
 }
