@@ -8,4 +8,12 @@ export interface QuicklyzerAnalysis {
         score: number;
         rating: string;
     };
+
+    architecture: {
+        score: {
+            score: number;
+            rating: string;
+        };
+        
+    }
 }
