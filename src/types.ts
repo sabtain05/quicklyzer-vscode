@@ -35,4 +35,11 @@ export interface QuicklyzerAnalysis {
         framework: string;
         testFiles: string[];
     };
+
+    api: {
+        totalEndpoints: number;
+        graphql: boolean;
+        websocket: boolean;
+        swagger: boolean;
+    };
 }
