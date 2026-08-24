@@ -66,4 +66,15 @@ export interface QuicklyzerAnalysis {
             rating: string;
         };
     };
+
+    intelligence: {
+        summary: string;
+        strengths: string[];
+        weaknesses: string[];
+        recommendations: string[];
+        grade: string;
+        maturity: string;
+        verdict: string;
+        roadmap: string[];
+    };
 }
