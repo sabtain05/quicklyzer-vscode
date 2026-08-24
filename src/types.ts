@@ -59,4 +59,11 @@ export interface QuicklyzerAnalysis {
         secrets: string[];
         sensitiveFiles: string[];
     };
+
+    documentation: {
+        score: {
+            score: number;
+            rating: string;
+        };
+    };
 }
