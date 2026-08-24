@@ -42,4 +42,12 @@ export interface QuicklyzerAnalysis {
         websocket: boolean;
         swagger: boolean;
     };
+
+    build: {
+        system: string;
+        score: {
+            score: number;
+            rating: string;
+        };
+    };
 }
