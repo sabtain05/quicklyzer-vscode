@@ -87,9 +87,7 @@ document
     });
 
 </script>
-
 </body>
-
 </html>
 `;
   }
