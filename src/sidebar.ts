@@ -9,5 +9,6 @@ export class QuicklyzerSidebarProvider implements vscode.WebviewViewProvider {
     resolveWebviewView(webviewView: vscode.WebviewView): void {
         this.view = webviewView;
         webviewView.webview.options = {enableScripts: true};
+        webviewView.webview.html = this.getHtml();
     }
 }
