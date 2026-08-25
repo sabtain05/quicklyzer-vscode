@@ -1,5 +1,5 @@
 {
-  "name": "quicklyzer",
+  "name": "quicklyzer-extension",
   "displayName": "Quicklyzer",
   "description": "VS code extension for Quicklyzer",
   "version": "1.0.0",
