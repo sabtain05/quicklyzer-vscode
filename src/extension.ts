@@ -7,7 +7,7 @@ export function activate(context: vscode.ExtensionContext) {
     console.log('Quicklyzer extension is now active.');
 
     const sidebarProvider =
-    new QuicklyzerSidebarProvider(context.extensionUri);
+    new QuicklyzerSidebarProvider();
 
 context.subscriptions.push(
     vscode.window.registerWebviewViewProvider(
