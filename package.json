@@ -1,8 +1,8 @@
 {
-  "name": "quicklyzer-ai",
+  "name": "quicklyzer",
   "displayName": "Quicklyzer",
   "description": "VS code extension for Quicklyzer",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "publisher": "sa-quicklyzer",
   "icon": "resources/quicklyzer.png",
   "engines": {
