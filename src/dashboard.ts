@@ -14,7 +14,7 @@ export function showDashboard(project: any) {
     panel.webview.html = getHtml(project, panel.webview, context.extensionUri);
 }
 
-function getHtml(project: any): string {
+function getHtml(project: any, webview: vscode.Webview, extensionUri: vscode.Uri): string {
     const score = project.projectScore.score;
 
     return `
