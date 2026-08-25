@@ -1,6 +1,6 @@
 {
   "name": "quicklyzer-extension",
-  "displayName": "Quicklyzer",
+  "displayName": "Quicklyzer Project Intelligence",
   "description": "VS code extension for Quicklyzer",
   "version": "1.0.0",
   "publisher": "sa-quicklyzer",
