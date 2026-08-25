@@ -30,7 +30,7 @@ function getHtml(project: any, webview: vscode.Webview, extensionUri: vscode.Uri
 
 <meta
     http-equiv="Content-Security-Policy"
-    content="default-src 'none'; style-src 'unsafe-inline';"
+    content="default-src 'none'; style-src 'unsafe-inline'; img-src ${webview.cspSource};"
 >
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
