@@ -6,7 +6,7 @@ import { QuicklyzerSidebarProvider } from "./sidebar";
 export function activate(context: vscode.ExtensionContext) {
     console.log('Quicklyzer extension is now active.');
 
-    const sidebarProvider = new QuicklyzerSidebarProvider();
+    const sidebarProvider = new QuicklyzerSidebarProvider(context.extensionUri);
 
     context.subscriptions.push(
         vscode.window.registerWebviewViewProvider(
