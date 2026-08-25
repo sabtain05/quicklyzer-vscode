@@ -24,7 +24,7 @@
           "type": "webview",
           "id": "quicklyzer.analysisView",
           "name": "Quicklyzer",
-          "icon": "$(pulse)"
+          "icon": "resources/quicklyzer.png"
         }
       ]
     }
