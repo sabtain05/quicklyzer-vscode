@@ -27,6 +27,7 @@ function getHtml(project: any, webview: vscode.Webview, extensionUri: vscode.Uri
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/png" href="${faviconUri}">
 
 <meta
     http-equiv="Content-Security-Policy"
