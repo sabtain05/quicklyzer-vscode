@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 
 export class QuicklyzerSidebarProvider implements vscode.WebviewViewProvider {
-    public static readonly viewType = "quicklyzer.dashboard";
+    public static readonly viewType = "quicklyzer.analysisView";
 
     // Pass extensionUri in the constructor so we can load the PNG logo
     constructor(private readonly _extensionUri: vscode.Uri) {}
