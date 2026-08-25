@@ -11,7 +11,7 @@ export function showDashboard(project: any) {
         }
     );
 
-    panel.webview.html = getHtml(project);
+    panel.webview.html = getHtml(project, panel.webview, context.extensionUri);
 }
 
 function getHtml(project: any): string {
