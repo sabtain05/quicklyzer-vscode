@@ -1,21 +1,86 @@
 import * as vscode from "vscode";
 
-export function showDashboard(project: any, extensionUri?: vscode.Uri) {
-    const resolvedExtensionUri = extensionUri ??
-        vscode.extensions.getExtension("quicklyzer.quicklyzer")?.extensionUri ??
-        vscode.Uri.file(__dirname);
+// Keep track of the panel so we don't open duplicate tabs
+let currentPanel: vscode.WebviewPanel | undefined;
 
-    const panel = vscode.window.createWebviewPanel(
-        "quicklyzerDashboard",
-        "Quicklyzer",
-        vscode.ViewColumn.One,
-        {
-            enableScripts: true,
-            retainContextWhenHidden: true
-        }
-    );
+export function showDashboardLoading(extensionUri: vscode.Uri) {
+    if (!currentPanel) {
+        currentPanel = vscode.window.createWebviewPanel(
+            "quicklyzerDashboard",
+            "Quicklyzer",
+            vscode.ViewColumn.One,
+            { enableScripts: true, retainContextWhenHidden: true }
+        );
 
-    panel.webview.html = getHtml(project, panel.webview, resolvedExtensionUri);
+        currentPanel.onDidDispose(() => {
+            currentPanel = undefined;
+        });
+    }
+
+    const faviconUri = currentPanel.webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "resources", "favicon.png"));
+    const logoUri = currentPanel.webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "resources", "quicklyzer.png"));
+
+    currentPanel.webview.html = `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" type="image/png" href="${faviconUri}">
+            <title>Quicklyzer - Analyzing</title>
+            <style>
+                body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: var(--vscode-editor-background); color: var(--vscode-foreground); margin: 0; }
+                .logo { width: 64px; height: 64px; margin-bottom: 24px; animation: pulse 2s infinite; }
+                @keyframes pulse { 0% { opacity: 0.6; transform: scale(0.95); } 50% { opacity: 1; transform: scale(1.05); } 100% { opacity: 0.6; transform: scale(0.95); } }
+                h2 { font-weight: 500; margin-bottom: 8px; }
+                p { opacity: 0.7; }
+            </style>
+        </head>
+        <body>
+            <img src="${logoUri}" alt="Quicklyzer" class="logo">
+            <h2>Analyzing Project...</h2>
+            <p>Gathering intelligence and architecture metrics</p>
+        </body>
+        </html>
+    `;
+    currentPanel.reveal();
+}
+
+export function showDashboardError(message: string, extensionUri: vscode.Uri) {
+    if (!currentPanel) {
+        showDashboardLoading(extensionUri);
+    }
+    const faviconUri = currentPanel!.webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "resources", "favicon.png"));
+    
+    currentPanel!.webview.html = `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" type="image/png" href="${faviconUri}">
+            <title>Quicklyzer - Error</title>
+            <style>
+                body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; padding: 40px; background: var(--vscode-editor-background); color: var(--vscode-foreground); }
+                .error-box { border-left: 4px solid var(--vscode-errorForeground); padding: 16px; background: var(--vscode-editorWidget-background); border-radius: 4px; }
+                h2 { margin-top: 0; color: var(--vscode-errorForeground); }
+            </style>
+        </head>
+        <body>
+            <div class="error-box">
+                <h2>Analysis Failed</h2>
+                <p>${escapeHtml(message)}</p>
+            </div>
+        </body>
+        </html>
+    `;
+}
+
+export function showDashboardResult(project: any, extensionUri: vscode.Uri) {
+    if (!currentPanel) {
+        showDashboardLoading(extensionUri);
+    }
+    currentPanel!.webview.html = getHtml(project, currentPanel!.webview, extensionUri);
 }
 
 function getHtml(project: any, webview: vscode.Webview, extensionUri: vscode.Uri): string {
