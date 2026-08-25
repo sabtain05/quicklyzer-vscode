@@ -1,6 +1,10 @@
 import * as vscode from "vscode";
 
-export function showDashboard(project: any) {
+export function showDashboard(project: any, extensionUri?: vscode.Uri) {
+    const resolvedExtensionUri = extensionUri ??
+        vscode.extensions.getExtension("quicklyzer.quicklyzer")?.extensionUri ??
+        vscode.Uri.file(__dirname);
+
     const panel = vscode.window.createWebviewPanel(
         "quicklyzerDashboard",
         "Quicklyzer",
@@ -11,10 +15,11 @@ export function showDashboard(project: any) {
         }
     );
 
-    panel.webview.html = getHtml(project, panel.webview, context.extensionUri);
+    panel.webview.html = getHtml(project, panel.webview, resolvedExtensionUri);
 }
 
 function getHtml(project: any, webview: vscode.Webview, extensionUri: vscode.Uri): string {
+    const faviconUri = webview.asWebviewUri(vscode.Uri.joinPath(extensionUri, "resources", "favicon.png"));
     const score = project.projectScore.score;
 
     return `
