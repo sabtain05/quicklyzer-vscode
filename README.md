@@ -4,7 +4,7 @@
 
 Quicklyzer is a powerful, offline-first analysis tool that deeply inspects your software projects. It transforms complex codebase metrics into a clean, professional dashboard directly inside your VS Code environment.
 
-![Quicklyzer Logo](https://raw.githubusercontent.com/sabtain05/quicklyzer/main/resources/quicklyzer.png)
+![Quicklyzer Logo](https://raw.githubusercontent.com/sabtain05/quicklyzer-vscode/blob/main/resources/quicklyzer.png)
 
 ## Features
 
