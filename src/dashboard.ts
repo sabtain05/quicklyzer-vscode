@@ -52,6 +52,13 @@ body {
     background: var(--vscode-editor-background);
 }
 
+.logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
 h1 {
     margin-bottom: 4px;
 }
