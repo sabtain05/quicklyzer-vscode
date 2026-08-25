@@ -20,15 +20,10 @@ export class QuicklyzerSidebarProvider implements vscode.WebviewViewProvider {
   private getHtml(): string {
     return `
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 <meta charset="UTF-8">
-
 <style>
-
 body {
     padding: 16px;
     color: var(--vscode-foreground);
@@ -64,16 +59,10 @@ button:hover {
 }
 
 </style>
-
 </head>
-
 <body>
-
 <h2>QUICKLYZER</h2>
-
-<p>
-Project analyzer and intelligence dashboard.
-</p>
+<p>Project analyzer and intelligence dashboard.</p>
 
 <button id="analyze">
 Analyze Project
