@@ -152,6 +152,8 @@ ul {
 <div class="project-header">
 
 <div>
+    <img
+    src="${webview.asWebviewUri(vscode.Uri.joinPath(extensionUri,"resources","quicklyzer.png"))}" alt="Quicklyzer" class="logo">
     <h1>QUICKLYZER</h1>
     <div class="subtitle">
         ${escapeHtml(project.name)}
