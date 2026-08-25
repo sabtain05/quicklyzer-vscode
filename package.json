@@ -3,7 +3,7 @@
   "displayName": "Quicklyzer",
   "description": "VS code extension for Quicklyzer",
   "version": "1.0.0",
-  "publisher": "Sabtain-ali",
+  "publisher": "sa-quicklyzer",
   "engines": {
     "vscode": "^1.120.0"
   },
