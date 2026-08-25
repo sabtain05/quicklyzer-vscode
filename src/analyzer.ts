@@ -1,12 +1,6 @@
-import * as path from "node:path";
-import { pathToFileURL } from "node:url";
-
 export async function analyzeWorkspace(workspacePath: string) {
-    const quicklyzerPath = path.resolve(workspacePath,"..","quicklyzer");
-
-    const projectModulePath = path.join(quicklyzerPath,"dist","services","project.js");
-
-    const projectModule = await import(pathToFileURL(projectModulePath).href);
-
-    return projectModule.analyzeProject(workspacePath);
+    // Dynamically import the ESM module to avoid CommonJS 'require' issues.
+    const { analyzeProject } = await import("quicklyzer/dist/services/project.js");
+    // The CLI logic is now dynamically imported and bundled by esbuild.
+    return await analyzeProject(workspacePath);
 }
