@@ -14,8 +14,25 @@ export class QuicklyzerSidebarProvider implements vscode.WebviewViewProvider {
       enableScripts: true,
     };
 
+     webviewView.webview.onDidReceiveMessage(
+        async message => {
+
+            if (message.command === "analyze") {
+
+                await vscode.commands.executeCommand(
+                    "quicklyzer.analyzeProject"
+                );
+
+            }
+
+        },
+        undefined,
+        []
+    );
+
     webviewView.webview.html = this.getHtml();
-  }
+}
+
 
   private getHtml(): string {
     return `
