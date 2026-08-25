@@ -6,6 +6,10 @@
   "engines": {
     "vscode": "^1.120.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sabtain05/quicklyzer"
+  },
   "categories": [
     "Other"
   ],
