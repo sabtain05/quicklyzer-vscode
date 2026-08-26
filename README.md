@@ -39,7 +39,7 @@ You can install this extension directly from the Visual Studio Code Marketplace:
 
 Alternatively, you can install it via the browser by visiting the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=sa-quicklyzer.quicklyzer-extension).
 
-## 💻 Usage
+## Usage
 
 1. Open any software project or repository in VS Code.
 2. Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`).
