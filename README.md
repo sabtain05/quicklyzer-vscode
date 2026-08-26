@@ -46,7 +46,7 @@ Alternatively, you can install it via the browser by visiting the [VS Code Marke
 3. Type `Quicklyzer: Scan Project` and hit Enter.
 4. The Quicklyzer dashboard will open in a new editor tab, displaying your comprehensive project report.
 
-## 🔗 The Quicklyzer Ecosystem
+## The Quicklyzer Ecosystem
 
 This extension is built on top of the open-source Quicklyzer core. If you prefer working in the terminal, check out our CLI tool!
 
