@@ -53,7 +53,7 @@ This extension is built on top of the open-source Quicklyzer core. If you prefer
 * **[Quicklyzer CLI (npm)](https://www.npmjs.com/package/quicklyzer)** - The core engine powering this extension.
 * **[Official Website](https://quicklyzer.vercel.app/)** - Learn more about our roadmap and features.
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions from the community! Whether it is a bug fix, new feature, or documentation improvement, your help is appreciated.
 
