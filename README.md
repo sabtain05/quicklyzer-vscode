@@ -1,10 +1,10 @@
 # Quicklyzer Code Intelligence
 
 <div align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=sa-quicklyzer.quicklyzer-extension">
+  <a href="https://marketplace.visualstudio.com/items?itemName=sa-quicklyzer.quicklyzer-extension&ssr=false">
     <img src="https://img.shields.io/visual-studio-marketplace/v/sa-quicklyzer.quicklyzer-extension?label=VS%20Code&logo=visualstudiocode&color=blue" alt="VS Code Marketplace Version">
   </a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=sa-quicklyzer.quicklyzer-extension">
+  <a href="https://marketplace.visualstudio.com/items?itemName=sa-quicklyzer.quicklyzer-extension&ssr=false">
     <img src="https://img.shields.io/visual-studio-marketplace/i/sa-quicklyzer.quicklyzer-extension?logo=visualstudiocode&color=brightgreen" alt="VS Code Marketplace Installs">
   </a>
   <a href="https://github.com/sabtain05/quicklyzer-vscode/blob/main/LICENSE">
