@@ -1,4 +1,4 @@
-# Quicklyzer Code Intelligence 🚀
+# Quicklyzer Code Intelligence
 
 <div align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=sa-quicklyzer.quicklyzer-extension">
