@@ -21,14 +21,14 @@
 
 ---
 
-## ✨ Features
+## Features
 
 * **Instant Project Scanning:** Trigger a deep scan of your current workspace with a single click or keyboard shortcut.
 * **Interactive Engineering Reports:** View your architecture, API routes, and build configurations in a clean, side-by-side dashboard UI.
 * **Dependency & Security Insights:** Identify outdated packages and potential security flaws directly within your IDE environment.
 * **Zero-Config Setup:** Works out of the box. No complex configurations or `.quicklyzerrc` files required to get started.
 
-## 🚀 Installation
+## Installation
 
 You can install this extension directly from the Visual Studio Code Marketplace:
 
