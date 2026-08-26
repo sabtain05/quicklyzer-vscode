@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/visual-studio-marketplace/i/sa-quicklyzer.quicklyzer-extension?logo=visualstudiocode&color=brightgreen" alt="VS Code Marketplace Installs">
   </a>
   <a href="https://github.com/sabtain05/quicklyzer-vscode/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/sabtain05/quicklyzer-extension?color=orange" alt="License">
+    <img src="https://img.shields.io/github/license/sabtain05/quicklyzer-vscode?color=orange" alt="License">
   </a>
   <a href="https://quicklyzer.vercel.app">
     <img src="https://img.shields.io/badge/Website-Quicklyzer-C9B17A?style=flat&logo=vercel" alt="Quicklyzer Website">
