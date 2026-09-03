@@ -69,5 +69,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 <div align="center">
-  <b>A Sabtain Ali production</b>
+  <b>A Ali production</b>
 </div>
